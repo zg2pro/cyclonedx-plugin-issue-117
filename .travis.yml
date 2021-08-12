@@ -8,7 +8,7 @@ env:
     - GRAVIS_REPO="https://github.com/DanySK/Gravis-CI.git"
     - GRAVIS="$HOME/gravis"
   matrix:
-    - JDK="adopt@1.11.0-12"
+    - JDK="adopt@1.11.0-11"
 before_install:
   - travis_retry git clone --depth 1 $GRAVIS_REPO $GRAVIS
   - source $GRAVIS/install-jdk ; source $GRAVIS/install-maven
@@ -17,5 +17,5 @@ cache:
     - $HOME/.jabba/
     - $HOME/.m2
 script: 
-  - mvn --version
+  - mvn -version
   - mvn clean package
